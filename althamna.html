@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+<meta charset="UTF-8">
+<title>مغسلة الثامنة علينا</title>
+
+<style>
+body{
+font-family:Arial;
+direction:rtl;
+text-align:center;
+background:#f2f2f2;
+}
+
+.box{
+background:white;
+width:350px;
+margin:auto;
+margin-top:60px;
+padding:25px;
+border-radius:12px;
+box-shadow:0 0 10px rgba(0,0,0,0.1);
+}
+
+input{
+width:90%;
+padding:12px;
+margin:10px;
+font-size:18px;
+}
+
+button{
+width:90%;
+padding:14px;
+margin:10px;
+font-size:18px;
+border:none;
+border-radius:8px;
+cursor:pointer;
+}
+
+.receive{
+background:#2ecc71;
+color:white;
+}
+
+.ready{
+background:#3498db;
+color:white;
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="box">
+
+<h2>مغسلة الثامنة علينا</h2>
+
+<input id="phone" placeholder="رقم العميل">
+
+<button class="receive" onclick="receive()">استلام الملابس</button>
+
+<hr>
+
+<input id="search" placeholder="رقم العميل">
+
+<button class="ready" onclick="ready()">الملابس جاهزة</button>
+
+</div>
+
+<script>
+
+function receive(){
+
+let phone=document.getElementById("phone").value;
+
+let msg1=`تم استلام ملابسك في مغسلة الثامنة علينا
+يسعدنا خدمتك نحن نهتم بملابسك وكأنها لنا .
+شكراً على اختيارك لنا سنخبرك فور تجهيز ملابسك.`;
+
+let msg2=`مرحباً بك في مغسلة الثامنة علينا،
+نشكرك على ثقتك بنا ونتمنى لك يوماً سعيداً.`;
+
+let url1="https://wa.me/"+phone+"?text="+encodeURIComponent(msg1);
+let url2="https://wa.me/"+phone+"?text="+encodeURIComponent(msg2);
+
+window.open(url1);
+
+setTimeout(function(){
+window.open(url2);
+},2000);
+
+}
+
+function ready(){
+
+let phone=document.getElementById("search").value;
+
+let msg=`ملابسك جاهزة للاستلام من مغسلة الثامنة علينا،
+ننتظرك في أي وقت يناسبك`;
+
+let url="https://wa.me/"+phone+"?text="+encodeURIComponent(msg);
+
+window.open(url);
+
+}
+
+</script>
+
+</body>
+</html>
